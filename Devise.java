@@ -5,10 +5,26 @@
  */
 package SuperConversions;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Anael
  */
 public class Devise {
+    private String type;
+    private float value;
     
+    public String getType(){
+        return type;
+    }
+    
+    public float getValue(){
+        return value;
+    }
+    
+    public void setType(){
+        ArrayList liste = new ArrayList();
+        
+    }
 }
