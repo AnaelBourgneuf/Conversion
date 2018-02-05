@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Devise {
     private String type;
     private float value;
+    private String urlApi = "https://api.devises.zone/v1/full/EUR/json?key=51%7CXyXBB~swhTX%5EkguJkHjSj~mZ0WA4c9rt";
     
     public String getType(){
         return type;
@@ -23,8 +24,21 @@ public class Devise {
         return value;
     }
     
-    public void setType(){
-        ArrayList liste = new ArrayList();
+    public void setType(String type){
+        this.type = type;
+    }
+    
+    public void setValue(float value){
+        this.value = value;
+    }
+    
+    public ArrayList callAPI(){
         
+        Unirest.post(this.urlApi)
+        .queryString("name", "Mark")
+        .field("last", "Polo")
+        .asJson();
+                
+        return new ArrayList();
     }
 }
