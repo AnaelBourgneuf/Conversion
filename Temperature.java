@@ -64,7 +64,7 @@ public class Temperature {
             return this.value;
         }
         else if (this.type == "celsius"){
-            return (float) (this.value + 273.15);
+            return (float) (this.value - 273.15);
         }
         else if (this.type == "fahrenheit"){
             return (float) this.value * 9/5 - 459.67;
