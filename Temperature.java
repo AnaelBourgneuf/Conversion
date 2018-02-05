@@ -10,18 +10,18 @@ package SuperConversions;
  * @author Anael
  */
 public class Temperature {
+    private float value;
+    private String Type;
     
-    public toFahrenheit(fCelsius) {
+    public void toFahrenheit() {
         float fFahrenheit;
         float fCelsius;
-        fFahrenheit = fCelsius * 1.8 + 32;
-        return fFahrenheit;
+        fFahrenheit = (float) (this.value * 1.8 + 32);
     
-}
-    public toCelsius(cFahrenheit){
+    }
+    
+    public void toCelsius(){
         float cCelsius;
-        cCelsius = cFahrenheit - 32 * (5/9);
-        return cCelsius;
-        
+        cCelsius = this.value - 32 * (5/9);
     }
 }
