@@ -5,6 +5,8 @@
  */
 package SuperConversions;
 
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.util.ArrayList;
 
 /**
@@ -32,7 +34,7 @@ public class Devise {
         this.value = value;
     }
     
-    public ArrayList callAPI(){
+    public ArrayList callAPI() throws UnirestException{
         
         Unirest.post(this.urlApi)
         .queryString("name", "Mark")
