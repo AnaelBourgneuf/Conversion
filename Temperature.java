@@ -11,4 +11,17 @@ package SuperConversions;
  */
 public class Temperature {
     
+    public toFahrenheit(fCelsius) {
+        float fFahrenheit;
+        float fCelsius;
+        fFahrenheit = fCelsius * 1.8 + 32;
+        return fFahrenheit;
+    
+}
+    public toCelsius(cFahrenheit){
+        float cCelsius;
+        cCelsius = cFahrenheit - 32 * (5/9);
+        return cCelsius;
+        
+    }
 }
