@@ -41,8 +41,16 @@ public class Temperature {
         cCelsius = this.value - 32 * (5/9);
     }
 
-    public void toKelvin(){
-        float kKelvin;
-        kKelvin = this.value + 273.15;
+    public float toKelvin(){
+        if (this.type == "kelvin"){
+            return this.value;
+        }
+        else if (this.type == "celsius"){
+            return (float) (this.value + 273.15);
+        }
+        else if (this.type == "fahrenheit"){
+            return (float) 0.0; //formule a trouver
+        }
+        return 0;
     }
 }
