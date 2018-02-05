@@ -40,4 +40,9 @@ public class Temperature {
         float cCelsius;
         cCelsius = this.value - 32 * (5/9);
     }
+
+    public void toKelvin(){
+        float kKelvin;
+        kKelvin = this.value + 273.15;
+    }
 }
