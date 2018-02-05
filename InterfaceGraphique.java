@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SuperConversions;
 
 import java.awt.Dimension;
@@ -10,27 +5,24 @@ import java.awt.GraphicsConfiguration;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Panel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Anael
- */
 public class InterfaceGraphique extends JFrame {
     public static JComboBox combo = new JComboBox();
     public static JLabel label = new JLabel("Que voulez vous convertir ?");
     public static JPanel container = new JPanel();
     public static JButton bouton = new JButton("Valider");
-
-
+    
     public InterfaceGraphique(){
         setTitle("Conversion");
         setSize(800,600);
         setLocationRelativeTo(null);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
        
