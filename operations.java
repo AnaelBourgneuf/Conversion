@@ -5,11 +5,10 @@
  */
 package SuperConversions;
 
-
 /**
  *
- * @author Dragonlord
+ * @author Anael
  */
-public class Conversion {
+public class operations {
     
 }
