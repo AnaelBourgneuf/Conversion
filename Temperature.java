@@ -29,16 +29,34 @@ public class Temperature {
         this.type = type;
     }
     
-    public void toFahrenheit() {
-        float fFahrenheit;
-        float fCelsius;
-        fFahrenheit = (float) (this.value * 1.8 + 32);
+    public float toFahrenheit() {
+        //float fFahrenheit;
+        //float fCelsius;
+        if (this.type == "fahrenheit") {
+            return (float) this.value;
+        }
+        else if (this.type == "celsius") {
+            return (float) this.value * 1.8 + 32;
+        }
+        else if (this.type == "kelvin"){
+            return (float) this.value + 459.67 * 5 / 9;
+        }
+        return 0;
     
     }
     
-    public void toCelsius(){
-        float cCelsius;
-        cCelsius = this.value - 32 * (5/9);
+    public float toCelsius(){
+        //float cCelsius;
+        if (this.type == "celsius") {
+            return (float) this.value;
+        }
+        else if (this.type == "fahrenheit") {
+            return (float) this.value - 32 * (5/9);
+        }
+        else if (this.type == "kelvin") {
+            return (float) this.value + 273.15;
+        }
+        return 0;
     }
 
     public float toKelvin(){
@@ -49,7 +67,7 @@ public class Temperature {
             return (float) (this.value + 273.15);
         }
         else if (this.type == "fahrenheit"){
-            return (float) 0.0; //formule a trouver
+            return (float) this.value * 9/5 - 459.67; //formule a trouver
         }
         return 0;
     }
