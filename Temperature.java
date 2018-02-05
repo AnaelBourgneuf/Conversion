@@ -11,7 +11,23 @@ package SuperConversions;
  */
 public class Temperature {
     private float value;
-    private String Type;
+    private String type;
+    
+    public float getValue(){
+        return this.value;
+    }
+    
+    public String getType(){
+        return this.type;
+    }
+    
+    public void setValue(float value){
+        this.value = value;
+    }
+    
+    public void setType(String type){
+        this.type = type;
+    }
     
     public void toFahrenheit() {
         float fFahrenheit;
