@@ -9,6 +9,6 @@ package SuperConversions;
  *
  * @author Anael
  */
-public class Operations {
+public class NikTamer {
     
 }
