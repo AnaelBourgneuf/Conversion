@@ -30,8 +30,7 @@ public class Temperature {
     }
     
     public float toFahrenheit() {
-        if (null != this.type) //float fFahrenheit;
-        //float fCelsius;
+        if (null != this.type)
         switch (this.type) {
             case "fahrenheit":
                 return (float) this.value;
@@ -46,7 +45,7 @@ public class Temperature {
     }
     
     public float toCelsius(){
-        if (null != this.type) //float cCelsius;
+        if (null != this.type)
         switch (this.type) {
             case "celsius":
                 return (float) (this.value);
@@ -61,7 +60,8 @@ public class Temperature {
     }
 
     public float toKelvin(){
-        if (null != this.type)switch (this.type) {
+        if (null != this.type)
+        switch (this.type) {
             case "kelvin":
                 return this.value;
             case "celsius":
