@@ -30,44 +30,46 @@ public class Temperature {
     }
     
     public float toFahrenheit() {
-        //float fFahrenheit;
+        if (null != this.type) //float fFahrenheit;
         //float fCelsius;
-        if (this.type == "fahrenheit") {
-            return (float) this.value;
-        }
-        else if (this.type == "celsius") {
-            return (float) this.value * 1.8 + 32;
-        }
-        else if (this.type == "kelvin"){
-            return (float) this.value + 459.67 * 5 / 9;
+        switch (this.type) {
+            case "fahrenheit":
+                return (float) this.value;
+            case "celsius":
+                return (float) (this.value * 1.8 + 32);
+            case "kelvin":
+                return (float) (this.value + 459.67 * 5 / 9);
+            default:
+                break;
         }
         return 0;
-    
     }
     
     public float toCelsius(){
-        //float cCelsius;
-        if (this.type == "celsius") {
-            return (float) this.value;
-        }
-        else if (this.type == "fahrenheit") {
-            return (float) this.value - 32 * (5/9);
-        }
-        else if (this.type == "kelvin") {
-            return (float) this.value + 273.15;
+        if (null != this.type) //float cCelsius;
+        switch (this.type) {
+            case "celsius":
+                return (float) (this.value);
+            case "fahrenheit":
+                return (float) (this.value - 32 * (5/9));
+            case "kelvin":
+                return (float) (this.value + 273.15);
+            default:
+                break;
         }
         return 0;
     }
 
     public float toKelvin(){
-        if (this.type == "kelvin"){
-            return this.value;
-        }
-        else if (this.type == "celsius"){
-            return (float) (this.value - 273.15);
-        }
-        else if (this.type == "fahrenheit"){
-            return (float) this.value * 9/5 - 459.67;
+        if (null != this.type)switch (this.type) {
+            case "kelvin":
+                return this.value;
+            case "celsius":
+                return (float) (this.value - 273.15);
+            case "fahrenheit":
+                return (float) (this.value * 9/5 - 459.67);
+            default:
+                break;
         }
         return 0;
     }
