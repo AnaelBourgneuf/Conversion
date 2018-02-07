@@ -11,6 +11,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import com.mashape.unirest.request.GetRequest;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -52,9 +53,19 @@ public class Devise {
     }
     
     public static void loadRateFromJSON(String from, String to) throws IOException, ParseException, JSONException{
-        JSONObject json = readJsonFromUrl("https://api.devises.zone/v1/full/"+from+"/json?key=51%7CXyXBB~swhTX%5EkguJkHjSj~mZ0WA4c9rt");
+        JSONArray json = (JSONArray) readJsonFromUrl("https://api.devises.zone/v1/full/"+from+"/json?key=51%7CXyXBB~swhTX%5EkguJkHjSj~mZ0WA4c9rt").getJSONObject("result").get("conversion");
         //JSONArray jsonarray = json.toJSONArray(new JSONArray());
-        System.out.println(json.toString());
+        //ArrayList array = new ArrayList();
+        String monnaie = "";
+        int i = 0;
+        while (!monnaie.equals(to)){
+            JSONArray array = json.getJSONArray(i);
+            monnaie = array.
+            i++;
+        }
+        
+        //while (!monnaie.equals(json.get("result")))
+        System.out.println(json.get(0));
     }
     
     public static void main(String[] args){
