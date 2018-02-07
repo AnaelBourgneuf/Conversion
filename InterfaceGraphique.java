@@ -5,12 +5,20 @@ import java.awt.GraphicsConfiguration;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.LayoutManager;
 import java.awt.Panel;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+
+
 
 public class InterfaceGraphique extends JFrame {
     public static JComboBox combo = new JComboBox();
@@ -18,7 +26,11 @@ public class InterfaceGraphique extends JFrame {
     public static JPanel container = new JPanel();
     public static JButton bouton = new JButton("Valider");
     
-    public InterfaceGraphique(){
+    
+    
+    
+    
+    public InterfaceGraphique() throws IOException{
         setTitle("Conversion");
         setSize(800,600);
         setLocationRelativeTo(null);
@@ -44,14 +56,29 @@ public class InterfaceGraphique extends JFrame {
         bot.add(bouton);
         container.add(bot, BorderLayout.SOUTH);
         
-        setContentPane(container);
+       
+        
+        ImageIcon icoFond = new ImageIcon(ImageIO.read(this.getClass().getResource("convert.jpg"))); 
+        JLabel center = new JLabel(icoFond);
+        center.setSize(100,100);
+        container.add(center, BorderLayout.CENTER);
+                 setContentPane(container);
+
+                 
+        validate();
         setVisible(true);
+            repaint();
     }
     
     
-    public static void main(String[] args) {
+    
+    
+    public static void main(String[] args) throws IOException {
         new InterfaceGraphique();
     }
+
+    
+
 
     
 }
