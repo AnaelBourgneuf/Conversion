@@ -7,9 +7,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.LayoutManager;
 import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -25,7 +30,7 @@ public class InterfaceGraphique extends JFrame {
     public static JLabel label = new JLabel("Que voulez vous convertir ?");
     public static JPanel container = new JPanel();
     public static JButton bouton = new JButton("Valider");
-    
+    public static JPanel temps = new JPanel();
     
     
     
@@ -62,12 +67,19 @@ public class InterfaceGraphique extends JFrame {
         JLabel center = new JLabel(icoFond);
         center.setSize(100,100);
         container.add(center, BorderLayout.CENTER);
-                 setContentPane(container);
-
-                 
+        setContentPane(container);
         validate();
         setVisible(true);
-            repaint();
+        repaint();
+        
+        bouton.addActionListener(((ActionEvent ae) -> {try {
+            validation();
+            } catch (IOException ex) {
+                Logger.getLogger(InterfaceGraphique.class.getName()).log(Level.SEVERE, null, ex);
+            }
+}));
+                 
+        
     }
     
     
@@ -77,8 +89,14 @@ public class InterfaceGraphique extends JFrame {
         new InterfaceGraphique();
     }
 
+    private static void validation() throws IOException{
+        //jFrame.setcontentpane()
+        //JLabel icoTemps = new JLabel(ImageIO.read(this.getClass().getResource("temps.png")));
+        //temps.add(icoTemps);
+        //System.out.println("click valider");
+         
+    }
     
-
-
+    
     
 }
