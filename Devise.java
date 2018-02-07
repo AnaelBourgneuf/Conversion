@@ -5,9 +5,19 @@
  */
 package SuperConversions;
 
+import static SuperConversions.JsonReader.readJsonFromUrl;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import java.util.ArrayList;
+import com.mashape.unirest.request.GetRequest;
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  *
@@ -16,7 +26,7 @@ import java.util.ArrayList;
 public class Devise {
     private String type;
     private float value;
-    private String urlApi = "https://api.devises.zone/v1/full/EUR/json?key=51%7CXyXBB~swhTX%5EkguJkHjSj~mZ0WA4c9rt";
+    private final String urlApi = "https://api.devises.zone/v1/full/EUR/json?key=51%7CXyXBB~swhTX%5EkguJkHjSj~mZ0WA4c9rt";
     
     public String getType(){
         return type;
@@ -34,13 +44,24 @@ public class Devise {
         this.value = value;
     }
     
-    public ArrayList callAPI() throws UnirestException{
+    public Map<String, List<String>> callAPI() throws UnirestException{
         
-        Unirest.post(this.urlApi)
-        .queryString("name", "Mark")
-        .field("last", "Polo")
-        .asJson();
-                
-        return new ArrayList();
+        GetRequest request = Unirest.get(urlApi);
+        Map<String, List<String>> api = request.getHeaders();
+        return api;
+    }
+    
+    public static void loadRateFromJSON(String from, String to) throws IOException, ParseException, JSONException{
+        JSONObject json = readJsonFromUrl("https://api.devises.zone/v1/full/"+from+"/json?key=51%7CXyXBB~swhTX%5EkguJkHjSj~mZ0WA4c9rt");
+        //JSONArray jsonarray = json.toJSONArray(new JSONArray());
+        System.out.println(json.toString());
+    }
+    
+    public static void main(String[] args){
+        try {
+            loadRateFromJSON("EUR", "USD");
+        } catch (IOException | ParseException | JSONException ex) {
+            Logger.getLogger(Devise.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

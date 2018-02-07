@@ -5,9 +5,17 @@
  */
 package SuperConversions;
 
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import com.mashape.unirest.request.GetRequest;
+import com.mashape.unirest.request.HttpRequest;
+import com.mashape.unirest.request.HttpRequestWithBody;
+import com.mashape.unirest.request.body.Body;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,7 +28,8 @@ public class main {
 
     public static void main(String[] args) throws UnirestException {
         try {
-            ArrayList arrayAPI = new Devise().callAPI();
+            Map<String, List<String>> API = new Devise().callAPI();
+            System.out.println(API);
         } catch (UnirestException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
