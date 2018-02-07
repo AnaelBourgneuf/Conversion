@@ -13,11 +13,14 @@ import java.sql.Time;
  */
 public class Heure {
     private Time value;
+    private String APIkey = "FTP5ETSY54DO";
 
     public Time getValue(){
         return this.value;
     }
 
-    
+    long unixTime = System.currentTimeMillis() / 1000L;
+
+
 
 }
