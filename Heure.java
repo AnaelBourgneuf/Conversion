@@ -5,10 +5,19 @@
  */
 package SuperConversions;
 
+import java.sql.Time;
+
 /**
  *
  * @author Anael
  */
 public class Heure {
+    private Time value;
+
+    public Time getValue(){
+        return this.value;
+    }
+
     
+
 }
