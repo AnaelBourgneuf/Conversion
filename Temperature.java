@@ -13,7 +13,7 @@ public class Temperature {
     private float fahrenheitToCelsius;
     private float kelvinToCelsius;
     
-    public float ratioTemp(String from, String to) {
+    public static float ratioTemp(String from, String to) {
         switch (from) {
             case "Fahrenheit":
                 switch (to) {
