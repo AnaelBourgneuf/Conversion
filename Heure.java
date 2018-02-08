@@ -5,6 +5,7 @@
  */
 package SuperConversions;
 
+import static SuperConversions.JsonReader.readJsonFromUrl;
 import java.sql.Time;
 
 /**
@@ -13,13 +14,21 @@ import java.sql.Time;
  */
 public class Heure {
     private Time value;
-    private String APIkey = "FTP5ETSY54DO";
-
+    private String fromAPI;
+    private String toAPI;
+    private final String API = "http://api.timezonedb.com/v2/convert-time-zone?key=FTP5ETSY54DO&format=json&from="+fromAPI+"&to="+toAPI;
+    long unixTime = System.currentTimeMillis() / 1000L;
+    
     public Time getValue(){
         return this.value;
     }
-
-    long unixTime = System.currentTimeMillis() / 1000L;
+    
+    public int convertTime(){
+        int result = readJsonFromUrl(API);
+        //Lignes à continuer
+        return result;
+        
+    }
 
 
 
