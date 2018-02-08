@@ -15,35 +15,35 @@ public class Temperature {
     
     public float ratioTemp(String from, String to) {
         switch (from) {
-            case "fahrenheit":
+            case "Fahrenheit":
                 switch (to) {
-                    case "fahrenheit":
+                    case "Fahrenheit":
                         return fahrenheitToCelsius/fahrenheitToCelsius;
-                    case "celsius":
+                    case "Celsius":
                         return fahrenheitToCelsius;
-                    case "kelvin":
+                    case "Kelvin":
                         return fahrenheitToCelsius/kelvinToCelsius;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
-            case "celsius":
+            case "Celsius":
                 switch (to) {
-                    case "fahrenheit":
+                    case "Fahrenheit":
                         return 1/fahrenheitToCelsius;
-                    case "celsius":
+                    case "Celsius":
                         return 1;
-                    case "kelvin":
+                    case "Kelvin":
                         return 1/kelvinToCelsius;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
-            case "kelvin":
+            case "Kelvin":
                 switch (to) {
-                    case "fahrenheit":
+                    case "Fahrenheit":
                         return kelvinToCelsius/fahrenheitToCelsius;
-                    case "celsius":
+                    case "Celsius":
                         return kelvinToCelsius;
-                    case "kelvin":
+                    case "Kelvin":
                         return kelvinToCelsius/kelvinToCelsius;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
