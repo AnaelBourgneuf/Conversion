@@ -87,6 +87,9 @@ public class Devise {
             System.out.println("Monnaie d'arrivée non prise en compte.");
             return 0;
         }
+        if (from.equals(to)){
+            return 1;
+        }
         return loadRateFromJSON(from, to);
     }
     

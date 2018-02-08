@@ -10,66 +10,46 @@ package SuperConversions;
  * @author Anael
  */
 public class Temperature {
-    private float value;
-    private String type;
+    private float fahrenheitToCelsius;
+    private float kelvinToCelsius;
     
-    public float getValue(){
-        return this.value;
-    }
-    
-    public String getType(){
-        return this.type;
-    }
-    
-    public void setValue(float value){
-        this.value = value;
-    }
-    
-    public void setType(String type){
-        this.type = type;
-    }
-    
-    public float toFahrenheit() {
-        if (null != this.type)
-        switch (this.type) {
+    public float ratioTemp(String from, String to) {
+        switch (from) {
             case "fahrenheit":
-                return (float) this.value;
+                switch (to) {
+                    case "fahrenheit":
+                        return fahrenheitToCelsius/fahrenheitToCelsius;
+                    case "celsius":
+                        return fahrenheitToCelsius;
+                    case "kelvin":
+                        return fahrenheitToCelsius/kelvinToCelsius;
+                    default:
+                        System.out.println("Unité d'arrivée non prise en compte");
+                }   break;
             case "celsius":
-                return (float) (this.value * 1.8 + 32);
+                switch (to) {
+                    case "fahrenheit":
+                        return 1/fahrenheitToCelsius;
+                    case "celsius":
+                        return 1;
+                    case "kelvin":
+                        return 1/kelvinToCelsius;
+                    default:
+                        System.out.println("Unité d'arrivée non prise en compte");
+                }   break;
             case "kelvin":
-                return (float) (this.value + 459.67 * 5 / 9);
+                switch (to) {
+                    case "fahrenheit":
+                        return kelvinToCelsius/fahrenheitToCelsius;
+                    case "celsius":
+                        return kelvinToCelsius;
+                    case "kelvin":
+                        return kelvinToCelsius/kelvinToCelsius;
+                    default:
+                        System.out.println("Unité d'arrivée non prise en compte");
+                }   break;
             default:
-                break;
-        }
-        return 0;
-    }
-    
-    public float toCelsius(){
-        if (null != this.type)
-        switch (this.type) {
-            case "celsius":
-                return (float) (this.value);
-            case "fahrenheit":
-                return (float) (this.value - 32 * (5/9));
-            case "kelvin":
-                return (float) (this.value + 273.15);
-            default:
-                break;
-        }
-        return 0;
-    }
-
-    public float toKelvin(){
-        if (null != this.type)
-        switch (this.type) {
-            case "kelvin":
-                return this.value;
-            case "celsius":
-                return (float) (this.value - 273.15);
-            case "fahrenheit":
-                return (float) (this.value * 9/5 - 459.67);
-            default:
-                break;
+                System.out.println("Unité de départ non prise en compte");
         }
         return 0;
     }
