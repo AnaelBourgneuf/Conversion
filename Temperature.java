@@ -10,8 +10,8 @@ package SuperConversions;
  * @author Anael
  */
 public class Temperature {
-    private float fahrenheitToCelsius;
-    private float kelvinToCelsius;
+    private static float fahrenheitToCelsius;
+    private static float kelvinToCelsius;
     
     public static float ratioTemp(String from, String to) {
         switch (from) {

@@ -175,7 +175,7 @@ public class InterfaceGraphique extends JFrame {
         String from = combo2.getSelectedItem().toString();
         String to = combo3.getSelectedItem().toString();
         String value =  textentree.getText();
-        float fval = (float) value.;
+        float fval = (float) value;
         float newvalue = fval*Temperature.ratioTemp(from, to);
     }
     
