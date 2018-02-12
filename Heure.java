@@ -24,9 +24,9 @@ public class Heure {
     }
     
     public int convertTime(){
-        int result = readJsonFromUrl(API);
+        //int result = readJsonFromUrl(API);
         //Lignes à continuer
-        return result;
+        return 1;
         
     }
 

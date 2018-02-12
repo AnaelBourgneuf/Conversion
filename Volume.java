@@ -10,21 +10,21 @@ package SuperConversions;
  * @author Anael
  */
 public class Volume {
-    private double cubicFootToCubicMetter = 0.02831685;
-    private double cubicInchToCubicMetter = 0.00001638706;
-    private long cubicMileToCubicMetter = 4168182*1000;
-    private double cubicYardToCubicMetter = 0.7645549;
-    private double cupToCubicMetter = 0.0002365882;
-    private double imperialGallonToCubicMetter = 0.00454609;
-    private double usGallonToCubicMetter = 0.003785412;
-    private double milliliterToCubicMetter = 0.000001;
-    private double literToCubicMetter = 0.001;
+    private static double cubicFootToCubicMetter = 0.02831685;
+    private static double cubicInchToCubicMetter = 0.00001638706;
+    private static long cubicMileToCubicMetter = 4168182*1000;
+    private static double cubicYardToCubicMetter = 0.7645549;
+    private static double cupToCubicMetter = 0.0002365882;
+    private static double imperialGallonToCubicMetter = 0.00454609;
+    private static double usGallonToCubicMetter = 0.003785412;
+    private static double milliliterToCubicMetter = 0.000001;
+    private static double literToCubicMetter = 0.001;
     
-    public double ratioVol(String from, String to){
+    public static double ratioVol(String from, String to){
         switch (from) {
-            case "foot(feet)³":
+            case "foot³(feet³)":
                 switch (to) {
-                    case "foot(feet)³":
+                    case "foot³(feet³)":
                         return cubicFootToCubicMetter/cubicFootToCubicMetter;
                     case "inch(s)³":
                         return cubicFootToCubicMetter/cubicInchToCubicMetter;

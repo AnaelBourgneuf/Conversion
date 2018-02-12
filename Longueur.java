@@ -10,17 +10,17 @@ package SuperConversions;
  * @author Anael
  */
 public class Longueur {
-    private double millimeterToMeter = 0.001;
-    private double centimeterToMeter = 0.01;
-    private double decimeterToMeter = 0.1;
-    private float meterToMeter = 1;
-    private float kilometerToMeter = 1000;
-    private double footToMeter = 0.3048;
-    private double inchToMeter = 0.0254;
-    private double mileToMeter = 1609.344;
-    private double yardToMeter = 0.9144;
+    private static double millimeterToMeter = 0.001;
+    private static double centimeterToMeter = 0.01;
+    private static double decimeterToMeter = 0.1;
+    private static float meterToMeter = 1;
+    private static float kilometerToMeter = 1000;
+    private static double footToMeter = 0.3048;
+    private static double inchToMeter = 0.0254;
+    private static double mileToMeter = 1609.344;
+    private static double yardToMeter = 0.9144;
     
-    public double ratioDist(String from, String to){
+    public static double ratioDist(String from, String to){
         switch (from) {
             case "millimètre(s)":
                 switch (to) {

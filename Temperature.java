@@ -10,41 +10,39 @@ package SuperConversions;
  * @author Anael
  */
 public class Temperature {
-    private static float fahrenheitToCelsius;
-    private static float kelvinToCelsius;
     
-    public static float ratioTemp(String from, String to) {
+    public static double convertTemp(String from, String to, double value) {
         switch (from) {
             case "Fahrenheit":
                 switch (to) {
                     case "Fahrenheit":
-                        return fahrenheitToCelsius/fahrenheitToCelsius;
+                        return value;
                     case "Celsius":
-                        return fahrenheitToCelsius;
+                        return (value-32)*5/9;
                     case "Kelvin":
-                        return fahrenheitToCelsius/kelvinToCelsius;
+                        return ((value-32)*5/9)-273.15;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
             case "Celsius":
                 switch (to) {
                     case "Fahrenheit":
-                        return 1/fahrenheitToCelsius;
+                        return value*9/5+32;
                     case "Celsius":
-                        return 1;
+                        return value;
                     case "Kelvin":
-                        return 1/kelvinToCelsius;
+                        return value+273.15;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
             case "Kelvin":
                 switch (to) {
                     case "Fahrenheit":
-                        return kelvinToCelsius/fahrenheitToCelsius;
+                        return (value-273.15)*9/5+32;
                     case "Celsius":
-                        return kelvinToCelsius;
+                        return value-273.15;
                     case "Kelvin":
-                        return kelvinToCelsius/kelvinToCelsius;
+                        return value;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
