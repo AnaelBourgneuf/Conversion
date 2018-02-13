@@ -44,18 +44,18 @@ public class InterfaceGraphique extends JFrame {
     public static JButton retourDist = new JButton ("Retour");
     public static JButton retourVol = new JButton ("Retour");
     public static JButton retourDev = new JButton ("Retour");
-    public static JButton validtemp =new JButton("Valider");
-    public static JButton validdev =new JButton("Valider");
-    public static JButton validdist =new JButton("Valider");
-    public static JButton validvol =new JButton("Valider");
-    JTextField textentreetemp = new JTextField(20);
-    JTextField textsortietemp = new JTextField(85);
-    JTextField textentreedev = new JTextField(20);
-    JTextField textsortiedev = new JTextField(85);
-    JTextField textentreedist = new JTextField(20);
-    JTextField textsortiedist = new JTextField(85);
-    JTextField textentreevol = new JTextField(20);
-    JTextField textsortievol = new JTextField(85);
+    public static JButton validtemp =new JButton("-->");
+    public static JButton validdev =new JButton("-->");
+    public static JButton validdist =new JButton("-->");
+    public static JButton validvol =new JButton("-->");
+    JTextField textentreetemp = new JTextField(15);
+    JTextField textsortietemp = new JTextField(20);
+    JTextField textentreedev = new JTextField(15);
+    JTextField textsortiedev = new JTextField(20);
+    JTextField textentreedist = new JTextField(15);
+    JTextField textsortiedist = new JTextField(20);
+    JTextField textentreevol = new JTextField(15);
+    JTextField textsortievol = new JTextField(20);
     
     
     
@@ -85,7 +85,6 @@ public class InterfaceGraphique extends JFrame {
         //image au centre 1ere page
         ImageIcon icoFond = new ImageIcon(ImageIO.read(this.getClass().getResource("convert.jpg"))); 
         JLabel center = new JLabel(icoFond);
-        center.setSize(100,100);
         container.add(center, BorderLayout.CENTER);
         setContentPane(container);
         validate();
@@ -119,20 +118,27 @@ public class InterfaceGraphique extends JFrame {
         JPanel panetemps = new JPanel();
         JLabel lab1 = new JLabel("unité entrée");
         JLabel lab2 = new JLabel("unitée sortie");
-        temp.add(lab1);
-        temp.add(comboentreetemp);
-        temp.add(lab2);
-        temp.add(combosortietemp);
+        JPanel boxUnit = new JPanel();
+        boxUnit.add(lab1);
+        boxUnit.add(comboentreetemp);
+        JPanel space = new JPanel();
+        boxUnit.add(space);
+        boxUnit.add(lab2);
+        boxUnit.add(combosortietemp);
+        temp.add(boxUnit);
         panetemps.add(temperature, BorderLayout.CENTER);
         temp.add(panetemps);
+        JPanel boxValues = new JPanel();
         JLabel labvalueentree = new JLabel("entrée");
-        temp.add(labvalueentree);
-        temp.add(textentreetemp);
-        temp.add(validtemp);
-       
+        boxValues.add(labvalueentree);
+        boxValues.add(textentreetemp);
+        boxValues.add(new JPanel());
+        boxValues.add(validtemp);
+        boxValues.add(new JPanel());
         JLabel labvaluesortie = new JLabel("Résultat");
-        temp.add(labvaluesortie);
-        temp.add(textsortietemp);
+        boxValues.add(labvaluesortie);
+        boxValues.add(textsortietemp);
+        temp.add(boxValues);
         
         validtemp.addActionListener(((ActionEvent ae) -> {try {
                 calculTemp();
@@ -180,20 +186,27 @@ public class InterfaceGraphique extends JFrame {
         JPanel panedev = new JPanel();
         JLabel labunitentree = new JLabel("unité entrée");
         JLabel labunitsortie = new JLabel("unitée sortie");
-        dev.add(labunitentree);
-        dev.add(comboentreedev);
-        dev.add(labunitsortie);
-        dev.add(combosortiedev);
+        JPanel boxUnit = new JPanel();
+        boxUnit.add(labunitentree);
+        boxUnit.add(comboentreedev);
+        JPanel space = new JPanel();
+        boxUnit.add(space);
+        boxUnit.add(labunitsortie);
+        boxUnit.add(combosortiedev);
+        dev.add(boxUnit);
         panedev.add(devise, BorderLayout.CENTER);
         dev.add(panedev);
+        JPanel boxValues = new JPanel();
         JLabel labvalueentree = new JLabel("entrée");
-        dev.add(labvalueentree);
-        dev.add(textentreedev);
-        dev.add(validdev);
-       
+        boxValues.add(labvalueentree);
+        boxValues.add(textentreedev);
+        boxValues.add(new JPanel());
+        boxValues.add(validdev);
+        boxValues.add(new JPanel());
         JLabel labvaluesortie = new JLabel("Résultat");
-        dev.add(labvaluesortie);
-        dev.add(textsortiedev);
+        boxValues.add(labvaluesortie);
+        boxValues.add(textsortiedev);
+        dev.add(boxValues);
         
         validdev.addActionListener(((ActionEvent ae) -> {try {
                 calculDev();
@@ -245,20 +258,27 @@ public class InterfaceGraphique extends JFrame {
         JPanel panedist = new JPanel();
         JLabel labunitentree = new JLabel("unité entrée");
         JLabel labunitsortie = new JLabel("unitée sortie");
-        dist.add(labunitentree);
-        dist.add(comboentreedist);
-        dist.add(labunitsortie);
-        dist.add(combosortiedist);
+        JPanel boxUnit = new JPanel();
+        boxUnit.add(labunitentree);
+        boxUnit.add(comboentreedist);
+        JPanel space = new JPanel();
+        boxUnit.add(space);
+        boxUnit.add(labunitsortie);
+        boxUnit.add(combosortiedist);
+        dist.add(boxUnit);
         panedist.add(distance, BorderLayout.CENTER);
         dist.add(panedist);
+        JPanel boxValues = new JPanel();
         JLabel labvalueentree = new JLabel("entrée");
-        dist.add(labvalueentree);
-        dist.add(textentreedist);
-        dist.add(validdist);
-       
+        boxValues.add(labvalueentree);
+        boxValues.add(textentreedist);
+        boxValues.add(new JPanel());
+        boxValues.add(validdist);
+        boxValues.add(new JPanel());
         JLabel labvaluesortie = new JLabel("Résultat");
-        dist.add(labvaluesortie);
-        dist.add(textsortiedist);
+        boxValues.add(labvaluesortie);
+        boxValues.add(textsortiedist);
+        dist.add(boxValues);
         
         validdist.addActionListener(((ActionEvent ae) -> {try {
                 calculDist();
@@ -274,6 +294,7 @@ public class InterfaceGraphique extends JFrame {
         //preparation image de fond
         ImageIcon icoVol = new ImageIcon(ImageIO.read(this.getClass().getResource("bol.png")));
         JLabel volume = new JLabel(icoVol);
+        volume.setSize(100,100);
         //ajout des choix dans les combobox definies au debut du programme
         comboentreevol.addItem("millilitre(s)");
         comboentreevol.addItem("litre(s)");
@@ -304,24 +325,30 @@ public class InterfaceGraphique extends JFrame {
         butRetour.add(retourVol, BorderLayout.NORTH);
         vol.add(Box.createVerticalStrut(20));
         vol.add(butRetour);
-        volume.setSize(100,100);
         JPanel panevol = new JPanel();
         JLabel labunitentree = new JLabel("unité entrée");
         JLabel labunitsortie = new JLabel("unitée sortie");
-        vol.add(labunitentree);
-        vol.add(comboentreevol);
-        vol.add(labunitsortie);
-        vol.add(combosortievol);
+        JPanel boxUnit = new JPanel();
+        boxUnit.add(labunitentree);
+        boxUnit.add(comboentreevol);
+        JPanel space = new JPanel();
+        boxUnit.add(space);
+        boxUnit.add(labunitsortie);
+        boxUnit.add(combosortievol);
+        vol.add(boxUnit);
         panevol.add(volume, BorderLayout.CENTER);
         vol.add(panevol);
+        JPanel boxValues = new JPanel();
         JLabel labvalueentree = new JLabel("entrée");
-        vol.add(labvalueentree);
-        vol.add(textentreevol);
-        vol.add(validvol);
-       
+        boxValues.add(labvalueentree);
+        boxValues.add(textentreevol);
+        boxValues.add(new JPanel());
+        boxValues.add(validvol);
+        boxValues.add(new JPanel());
         JLabel labvaluesortie = new JLabel("Résultat");
-        vol.add(labvaluesortie);
-        vol.add(textsortievol);
+        boxValues.add(labvaluesortie);
+        boxValues.add(textsortievol);
+        vol.add(boxValues);
         
         validvol.addActionListener(((ActionEvent ae) -> {try {
                 calculVol();
@@ -344,6 +371,13 @@ public class InterfaceGraphique extends JFrame {
                 Logger.getLogger(InterfaceGraphique.class.getName()).log(Level.SEVERE, null, ex);
             }
         }));
+        comboaccueil.addActionListener(((ActionEvent ae) -> {try {
+                validation();
+            } catch (Throwable ex) {
+                Logger.getLogger(InterfaceGraphique.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }));
+
         retourTemp.addActionListener(((ActionEvent ae) -> {try {
                 ActionRetour();
             } catch (Throwable ex) {
@@ -419,7 +453,7 @@ public class InterfaceGraphique extends JFrame {
         String to = combosortietemp.getSelectedItem().toString();
         String value =  textentreetemp.getText();
         float fval = Float.parseFloat(value);
-        double newvalue = Temperature.convertTemp(from, to, fval);
+        float newvalue = (float) Temperature.convertTemp(from, to, fval);
         System.out.println(fval+" -> "+newvalue);
         textsortietemp.setText(""+newvalue+"");
     } 
@@ -429,9 +463,9 @@ public class InterfaceGraphique extends JFrame {
         String to = combosortiedev.getSelectedItem().toString();
         String value =  textentreedev.getText();
         float fval = Float.parseFloat(value);
-        double newvalue = 0;
+        float newvalue = 0;
         try {
-            newvalue = fval*Devise.loadRate(from, to);
+            newvalue = (float) (fval*Devise.loadRate(from, to));
         } catch (IOException | ParseException | JSONException ex) {
             Logger.getLogger(InterfaceGraphique.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -444,8 +478,8 @@ public class InterfaceGraphique extends JFrame {
         String to = combosortiedist.getSelectedItem().toString();
         String value =  textentreedist.getText();
         float fval = Float.parseFloat(value);
-        double newvalue = 0;
-        newvalue = fval*Longueur.ratioDist(from, to);
+        float newvalue = 0;
+        newvalue = (float) (fval*Longueur.ratioDist(from, to));
         System.out.println(fval+" -> "+newvalue);
         textsortiedist.setText(""+newvalue+"");
     } 
@@ -455,8 +489,8 @@ public class InterfaceGraphique extends JFrame {
         String to = combosortievol.getSelectedItem().toString();
         String value =  textentreevol.getText();
         float fval = Float.parseFloat(value);
-        double newvalue = 0;
-        newvalue = fval*Volume.ratioVol(from, to);
+        float newvalue = 0;
+        newvalue = (float) (fval*Volume.ratioVol(from, to));
         System.out.println(fval+" -> "+newvalue);
         textsortievol.setText(""+newvalue+"");
     } 
