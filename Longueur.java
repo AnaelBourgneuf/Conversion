@@ -19,6 +19,9 @@ public class Longueur {
     private static double inchToMeter = 0.0254;
     private static double mileToMeter = 1609.344;
     private static double yardToMeter = 0.9144;
+    private static double lightSecondToMeter = 299792458;
+    private static double lightYearToMeter = 299792458*3600*24*365;
+    
     
     public static double ratioDist(String from, String to){
         switch (from) {
@@ -42,6 +45,10 @@ public class Longueur {
                         return millimeterToMeter/mileToMeter;
                     case "yard(s)":
                         return millimeterToMeter/yardToMeter;
+                    case "light year(s)":
+                        return millimeterToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return millimeterToMeter/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
@@ -65,6 +72,10 @@ public class Longueur {
                         return centimeterToMeter/mileToMeter;
                     case "yard(s)":
                         return centimeterToMeter/yardToMeter;
+                    case "light year(s)":
+                        return centimeterToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return centimeterToMeter/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
@@ -88,6 +99,10 @@ public class Longueur {
                         return decimeterToMeter/mileToMeter;
                     case "yard(s)":
                         return decimeterToMeter/yardToMeter;
+                    case "light year(s)":
+                        return decimeterToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return decimeterToMeter/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
@@ -111,6 +126,10 @@ public class Longueur {
                         return 1/mileToMeter;
                     case "yard(s)":
                         return 1/yardToMeter;
+                    case "light year(s)":
+                        return 1/lightYearToMeter;
+                    case "light second(s)":
+                        return 1/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
@@ -134,6 +153,10 @@ public class Longueur {
                         return kilometerToMeter/mileToMeter;
                     case "yard(s)":
                         return kilometerToMeter/yardToMeter;
+                    case "light year(s)":
+                        return kilometerToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return kilometerToMeter/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
@@ -157,6 +180,10 @@ public class Longueur {
                         return footToMeter/mileToMeter;
                     case "yard(s)":
                         return footToMeter/yardToMeter;
+                    case "light year(s)":
+                        return footToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return footToMeter/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
@@ -180,6 +207,10 @@ public class Longueur {
                         return inchToMeter/mileToMeter;
                     case "yard(s)":
                         return inchToMeter/yardToMeter;
+                    case "light year(s)":
+                        return inchToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return inchToMeter/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
@@ -203,6 +234,10 @@ public class Longueur {
                         return mileToMeter/mileToMeter;
                     case "yard(s)":
                         return mileToMeter/yardToMeter;
+                    case "light year(s)":
+                        return mileToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return mileToMeter/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;
@@ -226,6 +261,64 @@ public class Longueur {
                         return yardToMeter/mileToMeter;
                     case "yard(s)":
                         return yardToMeter/yardToMeter;
+                    case "light year(s)":
+                        return yardToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return yardToMeter/lightSecondToMeter;
+                    default:
+                        System.out.println("Unité d'arrivée non prise en compte");
+                }   break;
+            case "light year(s)":
+                switch (to) {
+                    case "millimètre(s)":
+                        return lightYearToMeter/millimeterToMeter;
+                    case "centimètre(s)":
+                        return lightYearToMeter/centimeterToMeter;
+                    case "décimètre(s)":
+                        return lightYearToMeter/decimeterToMeter;
+                    case "mètre(s)":
+                        return lightYearToMeter;
+                    case "kilomètre(s)":
+                        return lightYearToMeter/kilometerToMeter;
+                    case "foot(feet)":
+                        return lightYearToMeter/footToMeter;
+                    case "inch(es)":
+                        return lightYearToMeter/inchToMeter;
+                    case "mile(s)":
+                        return lightYearToMeter/mileToMeter;
+                    case "yard(s)":
+                        return lightYearToMeter/yardToMeter;
+                    case "light year(s)":
+                        return lightYearToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return lightYearToMeter/lightSecondToMeter;
+                    default:
+                        System.out.println("Unité d'arrivée non prise en compte");
+                }   break;
+            case "light second(s)":
+                switch (to) {
+                    case "millimètre(s)":
+                        return lightSecondToMeter/millimeterToMeter;
+                    case "centimètre(s)":
+                        return lightSecondToMeter/centimeterToMeter;
+                    case "décimètre(s)":
+                        return lightSecondToMeter/decimeterToMeter;
+                    case "mètre(s)":
+                        return lightSecondToMeter;
+                    case "kilomètre(s)":
+                        return lightSecondToMeter/kilometerToMeter;
+                    case "foot(feet)":
+                        return lightSecondToMeter/footToMeter;
+                    case "inch(es)":
+                        return lightSecondToMeter/inchToMeter;
+                    case "mile(s)":
+                        return lightSecondToMeter/mileToMeter;
+                    case "yard(s)":
+                        return lightSecondToMeter/yardToMeter;
+                    case "light year(s)":
+                        return lightSecondToMeter/lightYearToMeter;
+                    case "light second(s)":
+                        return lightSecondToMeter/lightSecondToMeter;
                     default:
                         System.out.println("Unité d'arrivée non prise en compte");
                 }   break;

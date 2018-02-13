@@ -146,7 +146,7 @@ public class InterfaceGraphique extends JFrame {
     public void setDevContainer() throws IOException{
         //JPanel des Devises
         //preparation image de fond
-        ImageIcon icoDev = new ImageIcon(ImageIO.read(this.getClass().getResource("temps.png")));
+        ImageIcon icoDev = new ImageIcon(ImageIO.read(this.getClass().getResource("bourse.png")));
         JLabel devise = new JLabel(icoDev);
         //ajout des choix dans les combobox definies au debut du programme
         comboentreedev.addItem("Euro");
@@ -207,7 +207,7 @@ public class InterfaceGraphique extends JFrame {
     public void setDistContainer() throws IOException{
         //JPanel des Devises
         //preparation image de fond
-        ImageIcon icoDist = new ImageIcon(ImageIO.read(this.getClass().getResource("temps.png")));
+        ImageIcon icoDist = new ImageIcon(ImageIO.read(this.getClass().getResource("metre.png")));
         JLabel distance = new JLabel(icoDist);
         //ajout des choix dans les combobox definies au debut du programme
         comboentreedist.addItem("millimètre(s)");
@@ -219,6 +219,8 @@ public class InterfaceGraphique extends JFrame {
         comboentreedist.addItem("inch(es)");
         comboentreedist.addItem("mile(s)");
         comboentreedist.addItem("yard(s)");
+        comboentreedist.addItem("light year(s)");
+        comboentreedist.addItem("light second(s)");
         comboentreedist.setSize(new Dimension(0,0));
         combosortiedist.addItem("foot(feet)");
         combosortiedist.addItem("inch(es)");
@@ -229,6 +231,8 @@ public class InterfaceGraphique extends JFrame {
         combosortiedist.addItem("décimètre(s)");
         combosortiedist.addItem("mètre(s)");
         combosortiedist.addItem("kilomètre(s)");
+        combosortiedist.addItem("light year");
+        combosortiedist.addItem("light second");
         // ???
         dist.setLayout(new BoxLayout(dist, BoxLayout.Y_AXIS));
         //preparation container pour le bouton de retour à l'accueil
@@ -268,7 +272,7 @@ public class InterfaceGraphique extends JFrame {
     public void setVolContainer() throws IOException{
         //JPanel des Devises
         //preparation image de fond
-        ImageIcon icoVol = new ImageIcon(ImageIO.read(this.getClass().getResource("temps.png")));
+        ImageIcon icoVol = new ImageIcon(ImageIO.read(this.getClass().getResource("bol.png")));
         JLabel volume = new JLabel(icoVol);
         //ajout des choix dans les combobox definies au debut du programme
         comboentreevol.addItem("millilitre(s)");
