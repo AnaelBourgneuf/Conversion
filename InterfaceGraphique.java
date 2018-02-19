@@ -3,6 +3,8 @@ package SuperConversions;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.text.ParseException;
@@ -90,7 +92,6 @@ public class InterfaceGraphique extends JFrame {
         validate();
         setVisible(true);
         repaint();
-        System.out.println("test");
     }
     
     public void setTempContainer() throws IOException{
@@ -360,6 +361,8 @@ public class InterfaceGraphique extends JFrame {
     }
     
     public InterfaceGraphique() throws IOException{
+        
+        this.setIconImage(new ImageIcon(this.getClass().getResource("icon.png")).getImage());
         setMainContainer();
         setTempContainer();
         setDevContainer();
